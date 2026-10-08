@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One million students. One powerful new qualification. | GEC Academy × 8billionideas</title>
+<meta name="description" content="GEC Academy brings the OxfordAQA International GCSE Global Skills Projects, delivered by 8billionideas, to students across China and Asia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1120; --navy-2:#111a2e; --navy-3:#1A2C38; --line:rgba(255,255,255,.1);
+  --mint:#20D299; --mint-d:#1ba87a; --purple:#6840FC; --yellow:#FFD04A; --coral:#D3555C;
+  --text:#fff; --muted:#a9b4c8; --paper:#F8F9FA; --ink:#0B1120; --ink-muted:#4b566b;
+  --r-lg:28px; --r-md:18px; --pill:999px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--navy);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{position:relative}
+.pad{padding-block:clamp(72px,10vw,140px)}
+h1,h2,h3{line-height:1.08;letter-spacing:-.025em;font-weight:700}
+h2{font-size:clamp(2rem,4.6vw,3.6rem);max-width:18ch}
+h2 em,h1 em{font-style:italic;color:var(--mint)}
+.lede{color:var(--muted);font-size:clamp(1rem,1.5vw,1.2rem);max-width:56ch}
+.light .lede{color:var(--ink-muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.5rem;border-radius:var(--pill);font-weight:500;font-size:.95rem;transition:transform .3s var(--ease),background .3s,box-shadow .3s;white-space:nowrap}
+.btn .ic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(11,17,32,.14);transition:transform .35s var(--ease)}
+.btn svg{width:14px;height:14px}
+.btn .dl{width:16px;height:16px}
+.btn-primary{background:var(--mint);color:var(--navy)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(32,210,153,.55)}
+.btn-primary:hover .ic{transform:rotate(45deg)}
+.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.btn-sm{padding:.55rem 1.1rem;font-size:.85rem}
+
+/* nav */
+.nav{position:fixed;inset:14px 0 auto;z-index:50;pointer-events:none}
+.nav .bar{pointer-events:auto;width:min(1180px,100% - 24px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .6rem .55rem 1.2rem;border-radius:var(--pill);border:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
+.nav.scrolled .bar{background:rgba(11,17,32,.72);backdrop-filter:blur(16px);border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:.8rem;font-weight:600;font-size:.95rem}
+.brand .gec-pill{display:flex;align-items:center;padding:8px 18px;border-radius:var(--pill);background:#fff;overflow:visible}
+.brand .gec{display:block;height:26px;width:auto;max-width:none;flex:none;border-radius:0}
+.brand .x{color:var(--muted);font-weight:400}
+.brand .b8{display:flex;align-items:center;gap:.5rem;white-space:nowrap}
+.brand .b8 svg{width:30px;height:auto}
+@media(max-width:480px){.brand{gap:.55rem}.brand .gec-pill{padding:6px 14px}.brand .gec{height:22px}.brand .b8 span{display:none}}
+
+/* hero */
+.hero{min-height:100svh;padding:150px 0 90px;display:flex;align-items:center;overflow:hidden;
+  background:radial-gradient(1100px 600px at 80% -10%,rgba(104,64,252,.35),transparent 60%),radial-gradient(900px 600px at 0% 100%,rgba(32,210,153,.18),transparent 60%),var(--navy)}
+.glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,30%),rgba(32,210,153,.13),transparent 70%)}
+.dots{position:absolute;inset:0;opacity:.5;pointer-events:none;mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%)}
+.hero-in{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.6rem}
+.chip{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1rem;border-radius:var(--pill);border:1px solid var(--line);background:rgba(255,255,255,.05);font-size:.82rem;color:var(--yellow)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(32,210,153,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(32,210,153,0)}100%{box-shadow:0 0 0 0 rgba(32,210,153,0)}}
+.hero h1{font-size:clamp(2.3rem,6.2vw,5.4rem);max-width:none;letter-spacing:-.035em}
+@media(max-width:640px){.hero h1 .l{white-space:normal}}
+@media(min-width:641px){.hero h1 .l{white-space:nowrap}}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .l>span{display:block;transform:translateY(105%);animation:up 1s var(--ease) forwards}
+.hero h1 .l:nth-child(2)>span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.hero .lede{max-width:60ch}
+.cta-row{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center}
+
+/* ask card (Powder-style prompt) */
+.ask{margin-top:2.4rem;width:min(720px,100%);text-align:left;border-radius:var(--r-lg);border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));backdrop-filter:blur(18px);box-shadow:0 40px 80px -30px rgba(0,0,0,.7);overflow:hidden}
+.ask-top{display:flex;align-items:center;gap:.5rem;padding:.9rem 1.2rem;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.ask-top .d{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.ask-top b{margin-left:.5rem;color:#fff;font-weight:500}
+.ask-body{padding:1.3rem 1.4rem;min-height:150px}
+.ask-q{display:inline-block;background:var(--purple);padding:.55rem 1rem;border-radius:18px 18px 4px 18px;font-size:.9rem;margin-left:auto;float:right;clear:both;max-width:85%}
+.ask-a{clear:both;display:flex;gap:.8rem;padding-top:1rem;font-size:.95rem;color:#e7ecf6}
+.ask-a svg{flex:none;width:30px;height:auto;margin-top:2px}
+.ask-a p{max-width:58ch}
+.ask-a p::after{content:"";display:inline-block;width:2px;height:1em;margin-left:2px;vertical-align:-.15em;background:var(--mint);animation:blink 1s steps(1) infinite}
+.ask-a.done p::after{display:none}
+@keyframes blink{50%{opacity:0}}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;padding:0 1.4rem 1.3rem}
+.pill{padding:.5rem 1rem;border-radius:var(--pill);border:1px solid var(--line);font-size:.82rem;color:var(--muted);transition:all .25s var(--ease)}
+.pill:hover{color:#fff;border-color:var(--mint);transform:translateY(-2px)}
+.pill[aria-pressed="true"]{background:var(--mint);color:var(--navy);border-color:var(--mint)}
+
+/* stats */
+.stats{border-block:1px solid var(--line);background:var(--navy-2)}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:clamp(28px,4vw,56px) clamp(16px,2.4vw,32px);border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat .n{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--mint)}
+.stat p{margin-top:.8rem;color:var(--muted);font-size:.9rem;max-width:24ch}
+@media(max-width:820px){.stats-g{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* video */
+.video{background:radial-gradient(900px 500px at 50% 100%,rgba(104,64,252,.25),transparent 65%),var(--navy)}
+.video .wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.video h2{max-width:24ch}
+.vid-stage{width:min(1000px,100%);margin-top:clamp(36px,5vw,64px);perspective:1400px}
+.vid{position:relative;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--navy-2);box-shadow:0 50px 100px -40px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.03);transform:scale(var(--vs,.9)) rotateX(calc((1 - var(--vs,.9)) * 28deg));transform-origin:50% 100%;will-change:transform}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-play{position:absolute;inset:0;width:100%;display:grid;place-items:center;background:linear-gradient(135deg,#1a2147,var(--navy-3))}
+.vid-play img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.vid-play:hover img{transform:scale(1.04)}
+.vid-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,17,32,.1),rgba(11,17,32,.65))}
+.vid-btn{position:relative;width:clamp(72px,10vw,104px);aspect-ratio:1;border-radius:50%;background:var(--mint);color:var(--navy);display:grid;place-items:center;transition:transform .4s var(--ease)}
+.vid-btn::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--mint);animation:ring 2.2s var(--ease) infinite}
+.vid-btn svg{width:42%;margin-left:6%}
+.vid-play:hover .vid-btn{transform:scale(1.1)}
+@keyframes ring{to{transform:scale(1.7);opacity:0}}
+.vid-lab{position:absolute;left:1.4rem;bottom:1.2rem;padding:.4rem 1rem;border-radius:var(--pill);background:rgba(11,17,32,.6);backdrop-filter:blur(8px);border:1px solid var(--line);font-size:.85rem}
+
+/* statement (scroll-lit words) */
+.statement{padding-block:clamp(90px,14vw,190px)}
+.statement p{font-size:clamp(1.7rem,4vw,3.3rem);font-weight:600;letter-spacing:-.025em;line-height:1.2;max-width:24ch}
+.statement .w{color:rgba(255,255,255,.18);transition:color .35s}
+.statement .w.on{color:#fff}
+.statement .w.m.on{color:var(--mint)}
+
+/* grades vs portfolio */
+.why{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,6vw,90px);align-items:start}
+.why-copy{display:grid;gap:1.4rem}
+.why-copy p{color:var(--muted)}
+.cites{display:grid;gap:.9rem;margin-top:.6rem}
+.cite{padding:1.1rem 1.3rem;border-radius:var(--r-md);border:1px solid var(--line);background:var(--navy-2);transition:transform .35s var(--ease),border-color .3s}
+.cite:hover{transform:translateX(6px);border-color:var(--mint)}
+.cite b{display:block;font-size:.85rem;color:var(--yellow);font-weight:500;margin-bottom:.2rem}
+.cite span{font-size:.92rem;color:#d6deec}
+.panel{position:sticky;top:96px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--navy-2);padding:1.4rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.tabs{position:relative;display:inline-flex;padding:4px;border-radius:var(--pill);background:rgba(255,255,255,.06);margin-bottom:1.2rem}
+.tabs button{position:relative;z-index:1;padding:.5rem 1.1rem;border-radius:var(--pill);font-size:.85rem;color:var(--muted);transition:color .25s}
+.tabs button[aria-selected="true"]{color:var(--navy)}
+.tabs .thumb{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;border-radius:var(--pill);background:var(--mint);transition:transform .4s var(--ease),width .4s var(--ease)}
+.file{display:grid;gap:.7rem}
+.file-h{display:flex;align-items:center;gap:.9rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--mint))}
+.file-h b{display:block;font-weight:600}
+.file-h small{color:var(--muted)}
+.row{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 1rem;border-radius:14px;background:rgba(255,255,255,.05);font-size:.9rem}
+.row span:last-child{color:var(--muted)}
+.extra{display:grid;gap:.7rem;overflow:hidden;max-height:0;opacity:0;transition:max-height .7s var(--ease),opacity .5s}
+.panel[data-mode="plus"] .extra{max-height:420px;opacity:1}
+.extra .row{background:rgba(32,210,153,.12);border:1px solid rgba(32,210,153,.35)}
+.extra .row span:last-child{color:var(--mint)}
+.verdict{margin-top:1.1rem;padding:1rem 1.2rem;border-radius:14px;background:rgba(255,255,255,.06);font-size:.88rem;color:#d6deec}
+.verdict strong{color:#fff}
+@media(max-width:900px){.why{grid-template-columns:1fr}.panel{position:static}}
+
+/* assessed by doing */
+.assess{background:linear-gradient(180deg,var(--navy),#0e1730)}
+.assess-g{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:clamp(36px,5vw,64px)}
+.proj{position:relative;overflow:hidden;padding:clamp(24px,3.4vw,44px);border-radius:var(--r-lg);border:1px solid var(--line);min-height:380px;display:flex;flex-direction:column;justify-content:space-between;gap:2rem;transition:transform .5s var(--ease),border-color .3s}
+.proj:hover{transform:translateY(-8px)}
+.proj.a{background:radial-gradient(500px 300px at 100% 0,rgba(32,210,153,.25),transparent 65%),var(--navy-2)}
+.proj.b{background:radial-gradient(500px 300px at 100% 0,rgba(104,64,252,.4),transparent 65%),var(--navy-2)}
+.proj .yr{display:inline-block;padding:.3rem .9rem;border-radius:var(--pill);border:1px solid var(--line);font-size:.8rem;color:var(--yellow)}
+.proj h3{font-size:clamp(1.5rem,2.6vw,2.2rem);margin:1rem 0 .8rem}
+.proj p{color:var(--muted);max-width:42ch}
+.ring{display:flex;align-items:center;gap:1.2rem}
+.ring svg{width:92px;height:92px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:rgba(255,255,255,.1)}
+.ring .fg{stroke-linecap:round;stroke-dasharray:264;stroke-dashoffset:264;transition:stroke-dashoffset 1.6s var(--ease)}
+.proj.a .fg{stroke:var(--mint)}.proj.b .fg{stroke:var(--purple)}
+.in .ring .fg{stroke-dashoffset:calc(264 - 264 * var(--p) / 100)}
+.ring b{font-size:2.6rem;letter-spacing:-.04em;line-height:1}
+.ring span{display:block;color:var(--muted);font-size:.85rem}
+.note{margin-top:1.6rem;display:flex;gap:.8rem;align-items:center;color:var(--muted);font-size:.95rem}
+.note svg{width:26px;flex:none}
+@media(max-width:820px){.assess-g{grid-template-columns:1fr}}
+
+/* curriculum */
+.cur-g{display:grid;grid-template-columns:minmax(260px,.8fr) 1.4fr;gap:clamp(32px,6vw,80px);align-items:center;margin-top:clamp(36px,5vw,64px)}
+.mark{position:relative;aspect-ratio:190/125;width:100%}
+.mark svg{width:100%;height:100%;overflow:visible}
+.mark circle{fill:rgba(255,255,255,.1);transition:fill .35s,transform .45s var(--ease),filter .35s;transform-box:fill-box;transform-origin:center}
+.mark circle.on{fill:var(--mint);transform:scale(1.18);filter:drop-shadow(0 0 18px rgba(32,210,153,.7))}
+.mark-cap{position:absolute;left:0;right:0;bottom:-2.4rem;text-align:center;color:var(--muted);font-size:.85rem;min-height:1.4em}
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.area{display:flex;gap:.9rem;align-items:center;padding:1rem 1.2rem;border-radius:var(--r-md);border:1px solid var(--line);background:var(--navy-2);text-align:left;transition:all .3s var(--ease)}
+.area i{flex:none;width:12px;height:12px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s}
+.area b{font-weight:500;font-size:1rem}
+.area:hover,.area:focus-visible,.area.on{border-color:var(--mint);background:rgba(32,210,153,.1);transform:translateY(-3px)}
+.area:hover i,.area.on i{background:var(--mint);transform:scale(1.4)}
+@media(max-width:820px){.cur-g{grid-template-columns:1fr}.mark{max-width:380px;margin-bottom:2.6rem}}
+@media(max-width:480px){.areas{grid-template-columns:1fr}}
+
+/* pathway */
+.path{background:var(--navy-2);overflow:hidden}
+.path-bg{position:absolute;top:50%;right:0;width:33.333%;height:min(520px,70%);transform:translateY(-50%);pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 40%),linear-gradient(180deg,transparent 0%,#000 20%,#000 80%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 40%),linear-gradient(180deg,transparent 0%,#000 20%,#000 80%,transparent 100%);mask-composite:intersect}
+.path-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;opacity:.6}
+@media(max-width:820px){.path-bg{width:100%;opacity:.25}}
+.path .wrap{position:relative;z-index:1}
+.path .lede{color:#cdd6e6}
+.path .step p{color:#cdd6e6}
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:clamp(40px,6vw,72px)}
+.steps::before,.steps::after{content:"";position:absolute;left:0;top:23px;height:3px;border-radius:3px}
+.steps::before{right:0;background:var(--line)}
+.steps::after{width:calc(var(--prog,0) * 100%);background:linear-gradient(90deg,var(--mint),var(--purple))}
+.step{position:relative;padding-top:64px}
+.step .node{position:absolute;top:8px;left:0;width:34px;height:34px;border-radius:50%;background:var(--navy);border:3px solid var(--line);display:grid;place-items:center;transition:border-color .5s,background .5s}
+.step .node::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .5s}
+.step.on .node{border-color:var(--mint)}.step.on .node::after{background:var(--mint)}
+.step .lv{display:inline-block;margin-bottom:.8rem;padding:.25rem .8rem;border-radius:var(--pill);background:rgba(255,215,74,.12);color:var(--yellow);font-size:.78rem}
+.step h3{font-size:1.5rem;margin-bottom:.6rem}
+.step p{color:var(--muted);font-size:.95rem;max-width:34ch}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:clamp(48px,7vw,90px)}
+.who{padding:clamp(22px,3vw,36px);border-radius:var(--r-lg);background:var(--navy);border:1px solid var(--line);transition:transform .4s var(--ease),border-color .3s}
+.who:hover{transform:translateY(-6px);border-color:var(--purple)}
+.who h3{font-size:1.4rem;margin-bottom:.6rem}
+.who p{color:var(--muted);font-size:.95rem}
+.glance{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.2rem}
+.g{padding:1.6rem;border-radius:var(--r-md);background:linear-gradient(160deg,rgba(104,64,252,.22),rgba(32,210,153,.08));border:1px solid var(--line);transition:transform .4s var(--ease)}
+.g:hover{transform:translateY(-6px) rotate(-.6deg)}
+.g small{color:var(--yellow);font-size:.8rem}
+.g b{display:block;font-size:1.2rem;margin:.3rem 0 .5rem;font-weight:600}
+.g p{font-size:.88rem;color:var(--muted)}
+@media(max-width:820px){.steps{grid-template-columns:1fr;gap:2rem}.steps::before,.steps::after{left:16px;right:auto;top:0;bottom:0;width:3px;height:auto}.steps::after{height:calc(var(--prog,0) * 100%)}.step{padding:0 0 0 58px}.step .node{top:0}.split,.glance{grid-template-columns:1fr}}
+
+/* faq */
+.faq-g{display:grid;grid-template-columns:.8fr 1.4fr;gap:clamp(32px,6vw,90px)}
+.faq-tabs{display:flex;flex-direction:column;gap:.5rem;margin-top:1.6rem;align-items:flex-start}
+.faq-tabs button{padding:.6rem 1.2rem;border-radius:var(--pill);border:1px solid var(--line);color:var(--muted);font-size:.9rem;transition:all .25s var(--ease)}
+.faq-tabs button:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+.faq-tabs button[aria-selected="true"]{background:#fff;color:var(--navy);border-color:#fff}
+.acc{display:none}
+.acc.show{display:block}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.4rem 0;text-align:left;font-size:1.1rem;font-weight:500;transition:color .2s}
+.qa button:hover{color:var(--mint)}
+.qa .pm{flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .4s var(--ease),background .3s,border-color .3s}
+.qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:currentColor;transform:translate(-50%,-50%);border-radius:2px}
+.qa .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+.qa[data-open="true"] .pm{background:var(--mint);border-color:var(--mint);color:var(--navy);transform:rotate(180deg)}
+.qa[data-open="true"] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.qa[data-open="true"] .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 3rem 1.5rem 0;color:var(--muted);max-width:60ch}
+@media(max-width:820px){.faq-g{grid-template-columns:1fr}.faq-tabs{flex-direction:row;flex-wrap:wrap}}
+
+/* cta */
+.cta{text-align:center;overflow:hidden;background:radial-gradient(800px 420px at 50% 120%,rgba(32,210,153,.35),transparent 65%),radial-gradient(700px 400px at 90% 0,rgba(104,64,252,.35),transparent 65%),var(--navy)}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:1.6rem}
+.cta h2{max-width:16ch;font-size:clamp(2.4rem,6vw,4.8rem)}
+.mail{font-size:.9rem;color:rgba(255,255,255,.4);max-width:44ch}
+.mail a{color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.25);transition:color .2s,border-color .2s}
+.mail a:hover{color:var(--mint);border-color:var(--mint)}
+.cta h2{max-width:20ch}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:44px;font-size:.88rem;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center}
+.foot .brand{color:#fff}
+
+/* reveal: used once per heading group only */
+.rv{opacity:0;transition:opacity .9s var(--ease)}
+.rv.in{opacity:1}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+  .hero h1 .l>span{transform:none}.rv{opacity:1}
+  .statement .w{color:#fff}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 190 125">
+    <circle cx="60" cy="18" r="17"/><circle cx="148" cy="18" r="17"/>
+    <circle cx="18" cy="62" r="17"/><circle cx="60" cy="62" r="17"/><circle cx="104" cy="62" r="17"/><circle cx="148" cy="62" r="17"/>
+    <circle cx="104" cy="106" r="17"/><circle cx="148" cy="106" r="17"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="#top" class="brand" aria-label="GEC Academy and 8billionideas">
+      <span class="gec-pill"><img class="gec" src="assets/gec-academy-logo.png" alt="GEC Academy" width="324" height="134"></span>
+      <span class="x" aria-hidden="true">×</span>
+      <span class="b8"><svg viewBox="0 0 190 125" fill="#20D299" aria-hidden="true"><use href="#mark"/></svg><span>8billionideas</span></span>
+    </a>
+    <a href="#talk" class="btn btn-primary btn-sm">Let’s talk <span class="ic"><svg><use href="#arrow"/></svg></span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <canvas class="dots" id="dots" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <span class="chip"><i></i>International GCSE Global Skills Projects</span>
+    <h1><span class="l"><span>The most important</span></span><span class="l"><span><em>new GCSE in a generation</em></span></span></h1>
+    <p class="lede">One million students. One powerful new qualification. A real edge in university admissions. GEC Academy brings the OxfordAQA International GCSE Global Skills Projects, delivered by 8billionideas, to students across China and Asia.</p>
+    <div class="cta-row">
+      <a href="#talk" class="btn btn-primary">Start the conversation <span class="ic"><svg><use href="#arrow"/></svg></span></a>
+      <!-- TODO: point href at the brochure PDF once it exists -->
+      <a href="#" class="btn btn-ghost">Download brochure <svg class="dl" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <div class="ask" id="ask">
+      <div class="ask-top"><span class="d"></span><span class="d"></span><span class="d"></span><b>Ask about the qualification</b></div>
+      <div class="ask-body" aria-live="polite">
+        <div class="ask-q" id="askQ"></div>
+        <div class="ask-a" id="askA">
+          <svg viewBox="0 0 190 125" fill="#20D299" aria-hidden="true"><use href="#mark"/></svg>
+          <p id="askP"></p>
+        </div>
+      </div>
+      <div class="pills" role="group" aria-label="Suggested questions">
+        <button class="pill" aria-pressed="false" data-i="0">How is it assessed?</button>
+        <button class="pill" aria-pressed="false" data-i="1">Who certifies it?</button>
+        <button class="pill" aria-pressed="false" data-i="2">What happens after?</button>
+        <button class="pill" aria-pressed="false" data-i="3">What’s the evidence?</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Key facts">
+  <div class="wrap stats-g">
+    <div class="stat"><div class="n"><span data-count="1000000" data-fmt="m">0</span></div><p>students targeted across China and Asia over the next decade</p></div>
+    <div class="stat"><div class="n"><span data-count="0">0</span></div><p>written exams. Assessment is entirely project work</p></div>
+    <div class="stat"><div class="n"><span data-count="2">0</span></div><p>projects, each formally graded by OxfordAQA</p></div>
+    <div class="stat"><div class="n"><span data-count="1000" data-suffix="+">0</span></div><p>students have already taken part in GEC Academy’s IEPQ</p></div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="pad video" id="video">
+  <div class="wrap">
+    <h2 class="rv">A short introduction to the <em>most exciting new GCSE in a generation</em></h2>
+    <div class="vid-stage" id="vidStage">
+      <div class="vid" id="vid">
+        <button class="vid-play" id="vidPlay" aria-label="Play the introduction video">
+          <img src="https://i.ytimg.com/vi/nRdsITaVT7c/maxresdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+          <span class="vid-shade"></span>
+          <span class="vid-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+          <span class="vid-lab">Play the film</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement" id="why">
+  <div class="wrap">
+    <p id="stmt" data-mint="portfolio,defend">Grades open the door. A portfolio a student can defend in person is what gets them noticed by an admissions panel.</p>
+  </div>
+</section>
+
+<!-- WHY GRADES ALONE -->
+<section class="pad" style="padding-top:0">
+  <div class="wrap why">
+    <div class="why-copy">
+      <h2 class="rv">Why grades alone aren’t <em>enough any more</em></h2>
+      <p>Admissions boards see thousands of similar applications every year, many built around exam grades alone. GPAs have been climbing across many school systems for years, which makes a strong set of grades harder to use as a point of difference.</p>
+      <p>The Global Skills Projects gives students that something else: an Individual Project and a Group Sustainability Action Project they can point to directly.</p>
+    </div>
+
+    <div class="panel" id="panel" data-mode="grades">
+      <div class="tabs" role="tablist" aria-label="Application view">
+        <span class="thumb" id="thumb"></span>
+        <button role="tab" aria-selected="true" data-m="grades">Grades only</button>
+        <button role="tab" aria-selected="false" data-m="plus">Grades + project portfolio</button>
+      </div>
+      <div class="file">
+        <div class="file-h"><div class="av" aria-hidden="true"></div><div><b>The applicant file</b><small>As the admissions panel sees it</small></div></div>
+        <div class="row"><span>Exam grades</span><span>Strong</span></div>
+        <div class="row"><span>Predicted GPA</span><span>Similar to thousands of others</span></div>
+        <div class="extra">
+          <div class="row"><span>Individual Project</span><span>Graded by OxfordAQA</span></div>
+          <div class="row"><span>Group Sustainability Action Project</span><span>Graded by OxfordAQA</span></div>
+          <div class="row"><span>Documented research process</span><span>On record</span></div>
+          <div class="row"><span>Panel conversation</span><span>Can be defended in person</span></div>
+        </div>
+      </div>
+      <div class="verdict" id="verdict"><strong>Hard to tell apart.</strong> The panel has grades, and little else to separate this applicant from the pile.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSESSED BY DOING -->
+<section class="pad assess" id="how">
+  <div class="wrap">
+    <h2 class="rv">Assessed by doing, <em>not by sitting an exam</em></h2>
+    <p class="lede" style="margin-top:1.2rem">Two pieces of real project work over two years. Both are formally graded and certified by OxfordAQA, the international arm of AQA, one of the UK’s major exam boards.</p>
+    <div class="assess-g" id="assessG">
+      <article class="proj a">
+        <div>
+          <span class="yr">Year 1</span>
+          <h3>Individual Project</h3>
+          <p>Students choose their own topic and develop it as a written report of around 2,500 words, or as a practical project with a shorter supporting report.</p>
+        </div>
+        <div class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42" style="--p:60"/></svg><div><b>60%</b><span>of the final grade</span></div></div>
+      </article>
+      <article class="proj b">
+        <div>
+          <span class="yr">Year 2</span>
+          <h3>Group Sustainability Action Project</h3>
+          <p>Students work in teams on a real sustainability challenge, then present their findings formally.</p>
+        </div>
+        <div class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42" style="--p:40"/></svg><div><b>40%</b><span>of the final grade</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="pad" id="curriculum">
+  <div class="wrap">
+    <h2 class="rv">Built on 8billionideas’ <em>The Critical Curriculum</em></h2>
+    <p class="lede" style="margin-top:1.2rem">Students choose their own Individual Project topic. The Critical Curriculum is where they build the thinking to make the most of it, across eight areas of practical learning.</p>
+    <div class="cur-g">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 190 125" id="markSvg">
+          <circle cx="60" cy="18" r="17"/><circle cx="148" cy="18" r="17"/>
+          <circle cx="18" cy="62" r="17"/><circle cx="60" cy="62" r="17"/><circle cx="104" cy="62" r="17"/><circle cx="148" cy="62" r="17"/>
+          <circle cx="104" cy="106" r="17"/><circle cx="148" cy="106" r="17"/>
+        </svg>
+        <div class="mark-cap" id="markCap">Pick an area to light its dot</div>
+      </div>
+      <div class="areas" id="areas">
+        <button class="area" data-d="Build an idea into something real." data-k="0"><i></i><b>Entrepreneurship</b></button>
+        <button class="area" data-d="Prepare for a changing working world." data-k="1"><i></i><b>Careers</b></button>
+        <button class="area" data-d="Look after your own and others’ wellbeing." data-k="2"><i></i><b>Wellbeing</b></button>
+        <button class="area" data-d="Lead others, and yourself." data-k="3"><i></i><b>Leadership</b></button>
+        <button class="area" data-d="Understand how health and performance connect." data-k="4"><i></i><b>Health &amp; performance</b></button>
+        <button class="area" data-d="Make confident decisions about money." data-k="5"><i></i><b>Financial literacy</b></button>
+        <button class="area" data-d="Take action on real-world challenges." data-k="6"><i></i><b>Sustainability</b></button>
+        <button class="area" data-d="Use technology with purpose." data-k="7"><i></i><b>Technology</b></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHWAY -->
+<section class="pad path" id="pathway">
+  <div class="path-bg" aria-hidden="true"><img src="assets/students.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <h2 class="rv">A pathway that <em>grows with the student</em></h2>
+    <p class="lede" style="margin-top:1.2rem">Rather than two separate qualifications to choose between, GEC Academy and 8billionideas are building one continuous pathway, from IGCSE through to A-level.</p>
+    <div class="steps" id="steps">
+      <div class="step"><span class="node"></span><span class="lv">Level 2</span><h3>Global Skills Projects</h3><p>A first, formally assessed step into independent research and project work.</p></div>
+      <div class="step"><span class="node"></span><span class="lv">Level 3</span><h3>IEPQ</h3><p>GEC Academy’s International Extended Project Qualification deepens the same skills into a university-facing piece of work.</p></div>
+      <div class="step"><span class="node"></span><span class="lv">Envisaged next</span><h3>Advanced research</h3><p>More advanced, research-based learning, as the partnership develops.</p></div>
+    </div>
+
+    <div class="glance">
+      <div class="g"><small>Continuous progression</small><b>One route</b><p>Global Skills Projects → IEPQ → advanced research</p></div>
+      <div class="g"><small>Tangible outcomes</small><b>Work to show</b><p>Project outputs, a documented research process and formal OxfordAQA results</p></div>
+      <div class="g"><small>Two-way markets</small><b>Shared growth</b><p>Coordinated development across China, Asia and the Middle East</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad" id="faq">
+  <div class="wrap faq-g">
+    <div>
+      <h2 class="rv">Questions, <em>answered</em></h2>
+      <div class="faq-tabs" role="tablist" aria-label="FAQ topics">
+        <button role="tab" aria-selected="true" data-t="q">The qualification</button>
+        <button role="tab" aria-selected="false" data-t="p">The pathway</button>
+        <button role="tab" aria-selected="false" data-t="s">For schools and families</button>
+      </div>
+    </div>
+    <div>
+      <div class="acc show" data-p="q">
+        <div class="qa" data-open="true"><button aria-expanded="true">Is there a written exam?<span class="pm"></span></button><div class="ans"><div><p>No. Assessment is two pieces of real project work, each formally graded by OxfordAQA.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How is the final grade split?<span class="pm"></span></button><div class="ans"><div><p>The Individual Project in Year 1 is worth 60%. The Group Sustainability Action Project in Year 2 is worth the remaining 40%.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">What do students produce?<span class="pm"></span></button><div class="ans"><div><p>In Year 1, a written report of around 2,500 words, or a practical project with a shorter supporting report. In Year 2, a team project presented formally.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">Who certifies the qualification?<span class="pm"></span></button><div class="ans"><div><p>OxfordAQA, the international arm of AQA, one of the UK’s major exam boards.</p></div></div></div>
+      </div>
+      <div class="acc" data-p="p">
+        <div class="qa"><button aria-expanded="false">What comes after the Global Skills Projects?<span class="pm"></span></button><div class="ans"><div><p>For students progressing toward A-level, GEC Academy’s International Extended Project Qualification (IEPQ) is the natural Level 3 continuation.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">Are these two separate qualifications?<span class="pm"></span></button><div class="ans"><div><p>No. GEC Academy and 8billionideas are building one continuous pathway from IGCSE through to A-level.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How much learning does the IEPQ involve?<span class="pm"></span></button><div class="ans"><div><p>Typically around 120 hours, including at least 30 hours of guided teaching, before formal OxfordAQA certification.</p></div></div></div>
+      </div>
+      <div class="acc" data-p="s">
+        <div class="qa"><button aria-expanded="false">Does the qualification have a track record?<span class="pm"></span></button><div class="ans"><div><p>Not yet, because it is new. Comparable independent, project-based qualifications, such as the UK’s Extended Project Qualification, already show what this kind of learning can do.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">Where is it available?<span class="pm"></span></button><div class="ans"><div><p>GEC Academy brings it to students across China and Asia. 8billionideas is bringing GEC Academy’s IEPQ to schools in the Middle East.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false">How do I get in touch?<span class="pm"></span></button><div class="ans"><div><p>Email 8billionideas at press@8billionideas.com.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad cta" id="talk">
+  <div class="wrap">
+    <h2>Ready to give your students <em>the opportunity of a lifetime?</em></h2>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:press@8billionideas.com?subject=International%20GCSE%20Global%20Skills%20Projects">Start your journey today <span class="ic"><svg><use href="#arrow"/></svg></span></a>
+      <a href="#" class="btn btn-ghost">Download brochure <svg class="dl" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <p class="mail">If you have any questions or enquiries, please email us at <a href="mailto:press@8billionideas.com">press@8billionideas.com</a></p>
+    <!-- TODO: enrolment link / contact form to be confirmed before launch (per source document) -->
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="brand" aria-label="GEC Academy and 8billionideas"><span class="gec-pill"><img class="gec" src="assets/gec-academy-logo.png" alt="GEC Academy" width="324" height="134"></span><span class="x" aria-hidden="true">×</span><span class="b8"><svg viewBox="0 0 190 125" fill="#20D299" aria-hidden="true"><use href="#mark"/></svg><span>8billionideas</span></span></a>
+    <span>International GCSE Global Skills Projects, developed by OxfordAQA, delivered by 8billionideas.</span>
+  </div>
+</footer>
+
+<script>
+(()=>{
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* nav */
+const nav=$('#nav');
+const onScroll=()=>{nav.classList.toggle('scrolled',scrollY>30);
+  const st=$('#steps'); if(st){const r=st.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/(r.height*.9)));st.style.setProperty('--prog',p.toFixed(3));$$('.step',st).forEach((s,i)=>s.classList.toggle('on',p>(i/3)+.04));}
+  litWords();
+};
+addEventListener('scroll',onScroll,{passive:true});
+
+/* hero glow + dot field */
+const hero=$('#hero');
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px');m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+const cv=$('#dots'),cx=cv.getContext('2d'),m={x:-999,y:-999};
+let W,H,dpr;
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);draw()}
+function draw(){cx.clearRect(0,0,W,H);const g=44;
+  for(let y=g/2;y<H;y+=g)for(let x=g/2;x<W;x+=g){const d=Math.hypot(x-m.x,y-m.y),k=Math.max(0,1-d/190);
+    cx.beginPath();cx.arc(x,y,2+k*6,0,6.283);cx.fillStyle=k>0?`rgba(32,210,153,${.15+k*.85})`:'rgba(255,255,255,.14)';cx.fill();}}
+size();addEventListener('resize',size);
+if(!reduce){(function loop(){draw();requestAnimationFrame(loop)})()}
+
+/* ask card */
+const answers=[
+ ['How is it assessed?','There is no written exam. Students complete an Individual Project in Year 1 (60% of the grade) and a Group Sustainability Action Project in Year 2 (40%), both formally graded.'],
+ ['Who certifies it?','OxfordAQA, the international arm of AQA, one of the UK’s major exam boards, formally grades and certifies both pieces of work.'],
+ ['What happens after?','Students progressing toward A-level can continue into GEC Academy’s IEPQ at Level 3, deepening the same research and project skills in a more university-facing piece of work.'],
+ ['What’s the evidence?','The qualification is new, so it has no track record yet. Research on the comparable UK Extended Project Qualification links it to stronger progression into higher education and higher rates of First-Class and 2:1 degrees.']
+];
+const askQ=$('#askQ'),askP=$('#askP'),askA=$('#askA'),pills=$$('.pill');
+let timer;
+function ask(i){
+  pills.forEach((p,j)=>p.setAttribute('aria-pressed',j===i));
+  askQ.textContent=answers[i][0];clearInterval(timer);askA.classList.remove('done');
+  const t=answers[i][1];
+  if(reduce){askP.textContent=t;askA.classList.add('done');return}
+  let n=0;askP.textContent='';
+  timer=setInterval(()=>{n+=2;askP.textContent=t.slice(0,n);if(n>=t.length){clearInterval(timer);askA.classList.add('done')}},16);
+}
+pills.forEach(p=>p.addEventListener('click',()=>ask(+p.dataset.i)));
+setTimeout(()=>ask(0),900);
+
+/* counters + in-view */
+const fmt=(v,el)=>{const f=el.dataset.fmt;if(f==='m'){return v>=1e6?'1M':Math.round(v).toLocaleString('en-GB')}return Math.round(v).toLocaleString('en-GB')+(el.dataset.suffix||'')};
+function count(el){const to=+el.dataset.count;if(reduce||to===0){el.textContent=fmt(to,el);return}
+  const t0=performance.now(),d=1800;(function f(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,4);el.textContent=fmt(to*e,el);if(k<1)requestAnimationFrame(f)})(t0)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
+  e.target.classList.add('in');$$('[data-count]',e.target).forEach(count);io.unobserve(e.target)}),{threshold:.3});
+$$('.stats,.rv,#assessG').forEach(el=>io.observe(el));
+
+/* scroll-lit statement */
+const stmt=$('#stmt'),mint=(stmt.dataset.mint||'').split(',');
+const words=stmt.textContent.split(' ');stmt.innerHTML='';
+const ws=words.map(w=>{const s=document.createElement('span');s.className='w'+(mint.some(k=>w.toLowerCase().startsWith(k))?' m':'');s.textContent=w;stmt.append(s,' ');return s});
+function litWords(){const r=stmt.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(innerHeight*.55+r.height*.4)));
+  const n=Math.round(p*ws.length);ws.forEach((w,i)=>w.classList.toggle('on',i<n))}
+
+/* grades vs portfolio */
+const panel=$('#panel'),thumb=$('#thumb'),verdict=$('#verdict');
+const tabBtns=$$('.tabs button',panel);
+function mode(btn){const mm=btn.dataset.m;panel.dataset.mode=mm;
+  tabBtns.forEach(b=>b.setAttribute('aria-selected',b===btn));
+  thumb.style.width=btn.offsetWidth+'px';thumb.style.transform=`translateX(${btn.offsetLeft-4}px)`;
+  verdict.innerHTML=mm==='plus'?'<strong>Easy to tell apart.</strong> The panel has graded project work and a research record, and can ask the student to explain it face to face.':'<strong>Hard to tell apart.</strong> The panel has grades, and little else to separate this applicant from the pile.'}
+tabBtns.forEach(b=>b.addEventListener('click',()=>mode(b)));
+addEventListener('resize',()=>mode($('.tabs [aria-selected=true]',panel)));
+document.fonts.ready.then(()=>mode(tabBtns[0]));
+
+/* curriculum dots */
+const dots=$$('#markSvg circle'),cap=$('#markCap');
+const order=[0,1,2,3,4,5,6,7];
+function light(k,d){dots.forEach((c,i)=>c.classList.toggle('on',i===order[k]));$$('.area').forEach(a=>a.classList.toggle('on',+a.dataset.k===k));cap.textContent=d}
+$$('.area').forEach(a=>{const go=()=>light(+a.dataset.k,a.dataset.d);a.addEventListener('mouseenter',go);a.addEventListener('focus',go);a.addEventListener('click',go)});
+$('#areas').addEventListener('mouseleave',()=>{dots.forEach(c=>c.classList.remove('on'));$$('.area').forEach(a=>a.classList.remove('on'));cap.textContent='Pick an area to light its dot'});
+
+/* video: scale-in on scroll, load YouTube only on click */
+const vs=$('#vidStage'),vid=$('#vid');
+function vidScale(){const r=vs.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.75)));vid.style.setProperty('--vs',(reduce?1:.9+.1*p).toFixed(3))}
+addEventListener('scroll',vidScale,{passive:true});addEventListener('resize',vidScale);vidScale();
+$('#vidPlay').addEventListener('click',()=>{
+  const f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/nRdsITaVT7c?autoplay=1&modestbranding=1&rel=0';
+  f.title='International GCSE Global Skills Projects introduction video';
+  f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
+  vid.replaceChildren(f);f.focus();
+});
+
+/* faq */
+$$('.faq-tabs button').forEach(b=>b.addEventListener('click',()=>{
+  $$('.faq-tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  $$('.acc').forEach(a=>a.classList.toggle('show',a.dataset.p===b.dataset.t));}));
+$$('.qa button').forEach(b=>b.addEventListener('click',()=>{
+  const qa=b.parentElement,open=qa.dataset.open==='true';
+  $$('.qa',qa.parentElement).forEach(o=>{o.dataset.open='false';$('button',o).setAttribute('aria-expanded','false')});
+  if(!open){qa.dataset.open='true';b.setAttribute('aria-expanded','true')}}));
+
+onScroll();
+})();
+</script>
+</body>
+</html>
